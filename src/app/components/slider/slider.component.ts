@@ -1,26 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../services/movies.service';
+import { MoviesService } from './../../services/movies.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  movies: any;
-  constructor(private moviesService: MoviesService) {}
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    console.log('SliderComponent initialized');
-    this.getPopularMovies();
-  }
 
-  getPopularMovies() {
-    this.moviesService.getPopularMovies().subscribe((data) => {
-      this.movies = data;
-      console.log(this.movies);
-    });
-  }
+  constructor(private moviesService: MoviesService) {}
+  movies$ = this.moviesService.getPopularMovies(); //we are using observable here async pipe in html
 }
