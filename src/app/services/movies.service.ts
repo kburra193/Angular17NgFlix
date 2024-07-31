@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class MoviesService {
   constructor(private http: HttpClient) {}
   getPopularMovies() {
-    return this.http.get(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return this.http.get<any>(
       'https://api.themoviedb.org/3/movie/popular?api_key=f412fcdc374f38cc4d3df630ea8d20be',
     );
   }
