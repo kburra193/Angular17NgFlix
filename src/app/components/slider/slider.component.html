@@ -3,9 +3,7 @@
     <div class="slide" *ngIf="movieIndex === slideIndex" @slideFade>
       <div class="slide-bg">
         <img
-          src="{{
-            'https://image.tmdb.org/t/p/original' + movie.backdrop_path
-          }}"
+          [src]="imagesBaseUrl + imageSize + movie.backdrop_path"
           [alt]="movie.title"
         />
       </div>

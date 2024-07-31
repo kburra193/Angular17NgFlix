@@ -6,11 +6,12 @@ import { MoviesDto } from '../types/move';
   providedIn: 'root',
 })
 export class MoviesService {
+  private apiUrl = 'https://api.themoviedb.org/3';
+  private apiKey = 'f412fcdc374f38cc4d3df630ea8d20be';
   constructor(private http: HttpClient) {}
   getPopularMovies() {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return this.http.get<MoviesDto>(
-      'https://api.themoviedb.org/3/movie/popular?api_key=f412fcdc374f38cc4d3df630ea8d20be',
+      `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`,
     );
   }
 }
