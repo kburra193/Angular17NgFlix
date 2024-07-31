@@ -2,7 +2,7 @@
   <div class="slide" *ngFor="let movie of movies.results">
     <div class="slide-bg">
       <img
-        src="https://image.tmdb.org/t/p/original/2vFuG6bWGyQUzYS9d69E5l85nIz.jpg"
+        src="{{ 'https://image.tmdb.org/t/p/original' + movie.backdrop_path }}"
         alt=""
       />
     </div>
