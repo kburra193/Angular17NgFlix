@@ -11,4 +11,6 @@ export class SliderComponent {
 
   constructor(private moviesService: MoviesService) {}
   movies$ = this.moviesService.getPopularMovies(); //we are using observable here async pipe in html
+
+  items = ['Name1', 'Name2', 'Name3', 'Name4', 'Name5'];
 }
