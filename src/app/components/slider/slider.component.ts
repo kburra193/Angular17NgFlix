@@ -36,6 +36,8 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.changeSlide();
+
+    console.log('Slider Component initialized');
   }
 
   changeSlide() {

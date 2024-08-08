@@ -10,9 +10,9 @@ export class HomeComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log('HomeComponent initialized');
+    console.log('Home Component initialized');
   }
   upComingMovies$ = this.moviesService.getMoviesByType('upcoming');
-  topRatedMovies$ = this.moviesService.getMoviesByType('top rated');
+  topRatedMovies$ = this.moviesService.getMoviesByType('top_rated');
   constructor(private moviesService: MoviesService) {}
 }
