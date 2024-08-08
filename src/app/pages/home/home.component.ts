@@ -12,7 +12,7 @@ export class HomeComponent {
     //Add 'implements OnInit' to the class.
     console.log('Home Component initialized');
   }
-  upComingMovies$ = this.moviesService.getMoviesByType('upcoming');
-  topRatedMovies$ = this.moviesService.getMoviesByType('top_rated');
+  upComingMovies$ = this.moviesService.getMoviesByType('upcoming', 12);
+  topRatedMovies$ = this.moviesService.getMoviesByType('top_rated', 12);
   constructor(private moviesService: MoviesService) {}
 }
