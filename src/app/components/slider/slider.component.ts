@@ -28,7 +28,7 @@ export class SliderComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   constructor(private moviesService: MoviesService) {}
-  movies$ = this.moviesService.getPopularMovies(); //we are using observable here async pipe in html
+  movies$ = this.moviesService.getMoviesByType('popular'); //we are using observable here async pipe in html
 
   slideIndex = 0;
   imagesBaseUrl = imagesBaseUrl;

@@ -9,21 +9,10 @@ export class MoviesService {
   private apiUrl = 'https://api.themoviedb.org/3';
   private apiKey = 'f412fcdc374f38cc4d3df630ea8d20be';
   constructor(private http: HttpClient) {}
-  getPopularMovies() {
-    return this.http.get<MoviesDto>(
-      `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`,
-    );
-  }
 
-  getUpcomingMovies() {
+  getMoviesByType(type: string) {
     return this.http.get<MoviesDto>(
-      `${this.apiUrl}/movie/upcoming?api_key=${this.apiKey}`,
-    );
-  }
-
-  getTopRatedMovies() {
-    return this.http.get<MoviesDto>(
-      `${this.apiUrl}/movie/top_rated?api_key=${this.apiKey}`,
+      `${this.apiUrl}/movie/${type}?api_key=${this.apiKey}`,
     );
   }
 }
