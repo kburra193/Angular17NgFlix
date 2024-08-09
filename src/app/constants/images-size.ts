@@ -9,3 +9,9 @@ export const imagesSize = {
   w780: 'w780',
   original: 'original',
 };
+
+export const IMAGES_SIZES = {
+  small: `${imagesBaseUrl}${imagesSize.w185}`,
+  medium: `${imagesBaseUrl}${imagesSize.w342}`,
+  large: `${imagesBaseUrl}${imagesSize.original}`,
+};
