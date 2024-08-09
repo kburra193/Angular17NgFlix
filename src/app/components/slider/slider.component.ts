@@ -27,17 +27,18 @@ import { Movie } from '../../types/movie';
 export class SliderComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @Input() slides: Movie[] = [];
-
+  @Input() isHeader = false;
   constructor() {}
 
   slideIndex = 0;
   imagesBaseUrl = imagesBaseUrl;
   imageSize = imageSize;
 
-  ngOnInit(): void {
-    this.changeSlide();
-
+  ngOnInit() {
     console.log('Slider Component initialized');
+    if (!this.isHeader) {
+      this.changeSlide();
+    }
   }
 
   changeSlide() {
