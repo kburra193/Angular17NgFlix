@@ -1,6 +1,20 @@
 <ng-container *ngIf="show$ | async as show">
   <app-slider [slides]="[show]" [isHeader]="true"></app-slider>
 </ng-container>
+<p-tabView>
+  <p-tabPanel header="Header I">
+    <p>Lorem ipsum dolor sit amet...</p>
+  </p-tabPanel>
+  <p-tabPanel header="Header II">
+    <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+      accusantium...
+    </p>
+  </p-tabPanel>
+  <p-tabPanel header="Header III">
+    <p>At vero eos et accusamus et iusto odio dignissimos...</p>
+  </p-tabPanel>
+</p-tabView>
 <p>The Movie ID is : {{ showId }}</p>
 <pre>
   {{ show$ | async | json }}
