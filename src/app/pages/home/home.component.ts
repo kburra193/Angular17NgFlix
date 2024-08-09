@@ -15,6 +15,7 @@ export class HomeComponent {
     //Add 'implements OnInit' to the class.
     console.log('Home Component initialized');
   }
+  popularMovies$ = this.moviesService.getMoviesByType('popular', 12);
   upComingMovies$ = this.moviesService.getMoviesByType('upcoming', 12);
   topRatedMovies$ = this.moviesService.getMoviesByType('top_rated', 12);
   popularTvshows$ = this.tvshowsService

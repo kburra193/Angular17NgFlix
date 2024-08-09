@@ -5,9 +5,9 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { MoviesService } from './../../services/movies.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { imagesBaseUrl, imageSize } from '../../constants/images-size';
+import { Movie } from '../../types/movie';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -26,9 +26,9 @@ import { imagesBaseUrl, imageSize } from '../../constants/images-size';
 })
 export class SliderComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  @Input() slides: Movie[] = [];
 
-  constructor(private moviesService: MoviesService) {}
-  movies$ = this.moviesService.getMoviesByType('popular'); //we are using observable here async pipe in html
+  constructor() {}
 
   slideIndex = 0;
   imagesBaseUrl = imagesBaseUrl;
