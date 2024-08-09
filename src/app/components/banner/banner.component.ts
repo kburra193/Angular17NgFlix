@@ -1,4 +1,4 @@
-import { Movie } from '../../types/move';
+import { Movie } from '../../types/movie';
 import { Component, Input } from '@angular/core';
 
 @Component({

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesService } from './../../services/movies.service';
+import { TvshowsService } from './../../services/tvshows.service';
 
 @Component({
   selector: 'app-home',
@@ -14,5 +15,9 @@ export class HomeComponent {
   }
   upComingMovies$ = this.moviesService.getMoviesByType('upcoming', 12);
   topRatedMovies$ = this.moviesService.getMoviesByType('top_rated', 12);
-  constructor(private moviesService: MoviesService) {}
+  popularTvshows$ = this.tvshowsService.getTvShowsByType('popular', 12);
+  constructor(
+    private moviesService: MoviesService,
+    private tvshowsService: TvshowsService,
+  ) {}
 }

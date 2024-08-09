@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from './../../types/move';
+import { Movie } from '../../types/movie';
 import { imagesBaseUrl } from './../../constants/images-size';
 
 @Component({
