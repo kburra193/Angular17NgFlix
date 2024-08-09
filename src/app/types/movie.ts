@@ -7,10 +7,9 @@ export type Movie = {
   popularity: number;
   poster_path: string;
   release_date: string;
-  title: string;
+  original_title: string;
   vote_average: number;
   vote_count: number;
-  name?: string;
 };
 
 export type MoviesDto = {
