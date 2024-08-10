@@ -84,6 +84,7 @@
       <ng-template let-actor pTemplate="item">
         <div class="actor">
           <img
+            *ngIf="actor.profile_path; else defaultActorImage"
             [src]="imagesSizes.small + actor.profile_path"
             alt="actor.name"
             class="actor-image"
@@ -94,8 +95,7 @@
       </ng-template>
     </p-carousel>
   </ng-container>
+  <ng-template #defaultActorImage>
+    <img src="assets/images/logo.png" alt="actor.name" class="actor-image" />
+  </ng-template>
 </ng-container>
-<p>The Movie ID is : {{ showId }}</p>
-<pre>
-  {{ show$ | async | json }}
-</pre>
