@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Movie } from '../../types/movie';
+import { Video } from '../../types/video';
 import { IMAGES_SIZES } from '../../constants/images-size';
 
 @Component({
@@ -13,6 +14,7 @@ import { IMAGES_SIZES } from '../../constants/images-size';
 export class ShowDetailComponent implements OnInit {
   showId = '';
   show$: Observable<Movie> | null = null;
+  showVideos$: Observable<Video[]> | null = null;
   imagesSizes = IMAGES_SIZES;
   constructor(
     private router: ActivatedRoute,
@@ -24,6 +26,7 @@ export class ShowDetailComponent implements OnInit {
       console.log(params);
       this.showId = params['id'];
       this.show$ = this.moviesService.getMovieById(this.showId);
+      this.showVideos$ = this.moviesService.getMovieVideos(this.showId);
     });
     //another merthod instead of subscribing to params changes
     //this.router.snapshot.params['id'];
